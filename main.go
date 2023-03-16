@@ -88,10 +88,7 @@ func deleteTodo(c *gin.Context, db *gorm.DB) {
 
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
+	godotenv.Load()
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=UTC",
         os.Getenv("DB_HOST"),
         os.Getenv("DB_USER"),
