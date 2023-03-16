@@ -128,6 +128,10 @@ func main() {
 		deleteTodo(c, db)
 	})
 
+	portValue := os.Getenv("PORT")
+	if portValue == "" {
+		portValue = "8000"
+	}
 
-	router.Run(":8000")
+	router.Run("0.0.0.0:" + portValue)
 }
